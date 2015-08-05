@@ -10,8 +10,6 @@ MissilesManager.prototype.update = function(){
 }
 
 MissilesManager.prototype.draw = function(){
-  canvas.fillStyle = "black";
-  canvas.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   for (var i = 0;i< this.missiles.length;i++){
     this.missiles[i].draw();
   }
@@ -19,4 +17,12 @@ MissilesManager.prototype.draw = function(){
 
 MissilesManager.prototype.add = function(missile){
   this.missiles.push(missile);
+}
+
+MissilesManager.prototype.addRandom = function(){
+  var posX = Math.random()*CANVAS_WIDTH;
+  var destinationX = Math.random()*CANVAS_WIDTH;
+  var m = new EnemyMissile([posX,0],[destinationX,CANVAS_HEIGHT]);
+
+  this.add(m);
 }
