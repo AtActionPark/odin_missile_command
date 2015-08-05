@@ -10,13 +10,11 @@ ExplosionsManager.prototype.update = function(){
 }
 
 ExplosionsManager.prototype.draw = function(){
-  canvas.fillStyle = "black";
-  canvas.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   for (var i = 0;i< this.explosions.length;i++){
     this.explosions[i].draw();
   }
 }
 
-ExplosionsManager.prototype.add = function(missile){
-  this.explosions.push(explosions);
+ExplosionsManager.prototype.add = function(explosion){
+  this.explosions.push(explosion);
 }

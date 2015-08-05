@@ -38,5 +38,7 @@ Missile.prototype.update = function(){
   this.position[1] -= this.direction[1]*speed;
   if(this.destinationReached()){
     this.toDestroy = true;
+    e = new Explosion(this.position);
+    explosionsManager.add(e);
   }
 }

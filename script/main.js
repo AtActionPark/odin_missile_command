@@ -19,7 +19,7 @@ function draw(){
   canvas.fillStyle = "black";
   canvas.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   missilesManager.draw();
-  //explosionsManager.draw();
+  explosionsManager.draw();
 }
 
 function update(){
