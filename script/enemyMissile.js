@@ -26,6 +26,7 @@ EnemyMissile.prototype.draw = function(){
   canvas.moveTo(this.initialPosition[0],this.initialPosition[1]);
   canvas.lineTo(this.position[0],this.position[1]);
   canvas.stroke();
+  drawRect(this.position[0]-1, this.position[1]-1,2,2,'white');
 }
 
 EnemyMissile.prototype.update = function(){
@@ -35,6 +36,7 @@ EnemyMissile.prototype.update = function(){
   if (this.position[0]<0 ||this.position[1] > CANVAS_WIDTH || this.position[1]>CANVAS_HEIGHT-basesHeight){
       this.toDestroy = true;
       e = new Explosion(this.position);
+      e.color = 'red';
       explosionsManager.add(e);
     }
 
@@ -43,6 +45,7 @@ EnemyMissile.prototype.update = function(){
       this.toDestroy = true;
       e = new Explosion(this.position);
       explosionsManager.add(e);
+      score++;
     }
   }
 }

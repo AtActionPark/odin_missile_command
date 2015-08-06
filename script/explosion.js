@@ -5,7 +5,8 @@ function Explosion(position){
   this.toDestroy = false;
   this.position = [position[0],position[1]];
   this.radius = 0;
-  this.growing = true
+  this.growing = true;
+  this.color = 'white';
 }
 
 Explosion.prototype.update = function(){
@@ -23,7 +24,7 @@ Explosion.prototype.update = function(){
 Explosion.prototype.draw = function(){
   canvas.beginPath();
   canvas.arc(this.position[0],this.position[1], this.radius, 0, 2 * Math.PI, false);
-  canvas.fillStyle = 'white';
+  canvas.fillStyle = this.color;
   canvas.fill();
 }
 

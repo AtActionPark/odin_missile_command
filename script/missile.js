@@ -26,6 +26,7 @@ Missile.prototype.draw = function(){
   canvas.moveTo(this.initialPosition[0],this.initialPosition[1]);
   canvas.lineTo(this.position[0],this.position[1]);
   canvas.stroke();
+  drawRect(this.position[0]-1, this.position[1]-1,2,2,'white');
 }
 
 Missile.prototype.update = function(){
@@ -33,7 +34,7 @@ Missile.prototype.update = function(){
     return;
   this.position[0] += this.direction[0]*speed;
   this.position[1] -= this.direction[1]*speed;
-  if(this.destinationReached()){
+  if(this.destinationReached() || this.position[0]<0){
     this.toDestroy = true;
     e = new Explosion(this.position);
     explosionsManager.add(e);
