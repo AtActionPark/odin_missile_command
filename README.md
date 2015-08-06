@@ -20,3 +20,5 @@ If your game logic gets too complicated or the speed is too fast, you'll probabl
 4. Build the logic for the explosions, which trigger chain reactions if they overlap with missiles.
 5. Start sending incoming missiles.  Play!
 6. Push your solution to Github and include it below.
+
+[html preview](http://htmlpreview.github.io/?https://github.com/AtActionPark/odin_missile_command/blob/master/index.html)
